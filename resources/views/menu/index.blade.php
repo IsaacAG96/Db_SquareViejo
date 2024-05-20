@@ -9,7 +9,12 @@
 <body>
     <div class="container mt-5">
         <div class="d-flex justify-content-between align-items-center mb-3">
+            @if (Auth::check())
             <h3>Bienvenido, {{ Auth::user()->name }}</h3>
+        @else
+            <h3>Bienvenido, Invitado</h3>
+        @endif
+        
             @include('partials.logout-button')
         </div>
         <div class="card">
